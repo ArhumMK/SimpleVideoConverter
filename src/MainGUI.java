@@ -48,6 +48,14 @@ public class MainGUI extends JFrame {
     }
 
     private void setupGUI() {
+        // Use Native OS style GUI
+        try {
+            // Set system look and feel
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         setTitle("Simple FFmpeg Video Tool");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
